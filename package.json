@@ -1,14 +1,43 @@
 {
   "name": "listview-navigator",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/listview-navigator.cjs.js",
+  "module": "lib/listview-navigator.es.js",
+  "files": [
+    "lib",
+    "src",
+    "index.js"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "rimraf lib && rollup -c --environment INCLUDE_DEPS,BUILD:production"
   },
   "author": "ryuyutyo <liuyouchao111@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dom-eventer": "^1.0.1"
+    "dom-eventer": "^1.0.1",
+    "emitter-helper": "^1.0.0",
+    "key-emitter": "^1.0.0",
+    "scroll-controller": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^21.2.1",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.52.1",
+    "rollup-multiple-entries": "^1.1.2",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "ts-jest": "^21.2.4",
+    "typescript": "^2.6.2"
   }
 }
