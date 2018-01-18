@@ -6,7 +6,7 @@ import DOMEventer from 'dom-eventer';
 import ScrollController from 'scroll-controller';
 import Emitter from 'emitter-helper';
 
-class ListViewNavigator extends Emitter{
+export default class ListViewNavigator extends Emitter{
   constructor(opts) {
     super();
 
@@ -126,5 +126,3 @@ class ListViewNavigator extends Emitter{
     })
   }
 }
-
-module.exports = ListViewNavigator;
