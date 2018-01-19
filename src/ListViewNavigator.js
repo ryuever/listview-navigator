@@ -85,9 +85,18 @@ export default class ListViewNavigator extends Emitter{
     this.activeShowIndex = 0;
     this.arrowHandler.setIndex(this.activeShowIndex);
 
+    this.setMaxIndex(max);
+  }
+
+  setMaxIndex(max) {
     if (typeof max !== 'undefined') {
       this.arrowHandler.setMax(max);
     }
+  }
+
+  resetIndex() {
+    this.activeShowIndex = -1;
+    this.arrowHandler.reset();
   }
 
   updateIndexAfterArrowKey(index) {

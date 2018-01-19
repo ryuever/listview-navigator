@@ -1,6 +1,6 @@
 {
   "name": "listview-navigator",
-  "version": "1.3.7",
+  "version": "1.3.12",
   "description": "",
   "main": "lib/listview-navigator.cjs.js",
   "module": "lib/listview-navigator.es.js",
