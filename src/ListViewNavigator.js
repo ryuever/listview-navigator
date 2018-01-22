@@ -77,7 +77,17 @@ export default class ListViewNavigator extends Emitter{
   updateIndexAfterCommit(index) {
     this.activeIndex = index;
     this.activeShowIndex = this.activeIndex;
+  }
 
+  updateIndexAfterArrowKey(index) {
+    this.activeShowIndex = index;
+  }
+
+  updateActiveIndex(index) {
+    this.arrowHandler.setIndex(index, true);
+  }
+
+  updateShowIndex(index) {
     this.arrowHandler.setIndex(index);
   }
 
@@ -99,19 +109,15 @@ export default class ListViewNavigator extends Emitter{
     this.arrowHandler.reset();
   }
 
-  updateIndexAfterArrowKey(index) {
-    this.activeShowIndex = index;
-    this.arrowHandler.setIndex(index);
-  }
-
   next(index, isCommitKey) {
-    if (this.isItemInStrictViewport(index)) return;
-
     if (isCommitKey) {
       this.updateIndexAfterCommit(index);
     } else {
       this.updateIndexAfterArrowKey(index);
     }
+
+    if (this.isItemInStrictViewport(index)) return;
+
     const distance = this.distanceNeedToTransform(index);
     this.target.scrollTop = distance;
   }
@@ -126,6 +132,7 @@ export default class ListViewNavigator extends Emitter{
     this.arrowHandler.on('change', ({ index }) => {
       // current object will emit current index and next index
       this.emit('change', index, this.activeShowIndex);
+
       this.next(index);
     })
 
