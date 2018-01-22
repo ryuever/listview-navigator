@@ -1,7 +1,7 @@
 {
   "name": "listview-navigator",
   "version": "1.3.13",
-  "description": "",
+  "description": "Delegate arrow key down or up operation on list container",
   "main": "lib/listview-navigator.cjs.js",
   "module": "lib/listview-navigator.es.js",
   "files": [
@@ -39,5 +39,6 @@
     "rollup-plugin-typescript": "^0.8.1",
     "ts-jest": "^21.2.4",
     "typescript": "^2.6.2"
-  }
+  },
+  "repository": "https://github.com/ryuever/listview-navigator.git"
 }
