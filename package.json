@@ -1,6 +1,6 @@
 {
   "name": "listview-navigator",
-  "version": "1.3.13",
+  "version": "1.4.0",
   "description": "Delegate arrow key down or up operation on list container",
   "main": "lib/listview-navigator.cjs.js",
   "module": "lib/listview-navigator.es.js",
